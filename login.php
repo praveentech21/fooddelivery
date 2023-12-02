@@ -1,5 +1,5 @@
 <?php
-include "connect.php";
+ $conn = new mysqli("localhost", "root", "", "fooddelivery");
 session_start();
 
 if (isset($_POST["login"])) {
@@ -52,27 +52,27 @@ if (isset($_POST["login"])) {
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="boxicons.css" />
-    <link rel="stylesheet" href="code.css" />
+    <link rel="stylesheet" href="bhavani/css/boxicons.css" />
+    <link rel="stylesheet" href="bhavani/css/code.css" />
 
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="demo.css" />
+    <link rel="stylesheet" href="bhavani/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="bhavani/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="bhavani/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="perfect-scrollbar.css" />
+    <link rel="stylesheet" href="bhavani/css/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
     <!-- Page -->
-    <link rel="stylesheet" href="page-auth.css" />
+    <link rel="stylesheet" href="bhavani/css/page-auth.css" />
     <!-- Helpers -->
-    <script src="helpers.js"></script>
+    <script src="bhavani/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="config.js"></script>
+    <script src="bhavani/js/config.js"></script>
   </head>
 
   <body>
@@ -107,7 +107,7 @@ if (isset($_POST["login"])) {
                 <a href="index.html" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
                     <div class="logo-container">
-                      <img src="logo.png" alt="Logo">
+                      <img src="bhavani/img/logo.png" alt="Logo">
                     </div>
                   </span>
                   <span class="app-brand-text demo text-body fw-bolder">Instant Delivery</span>
