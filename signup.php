@@ -10,7 +10,7 @@ if (isset($_POST["signup"])) {
   $cpassword = $_POST["cpassword"];
   if ($password != $cpassword) {
     echo "<script>alert('Password does not match')</script>";
-    header("Location: delivery.php")
+    header("Location: delivery.php");
   }
   $sql = "INSERT INTO users (`name`, `mobile` , `password`) VALUES ('$name','$mobile', '$password')";
 
