@@ -123,7 +123,7 @@
             >Contact Us</a>
         </div>
       </div>
-      <a href="luncjbox/login.php" class="btn btn-primary px-3 d-none d-lg-block">Login</a>
+      <a href="lunchbox/login.php" class="btn btn-primary px-3 d-none d-lg-block">Login</a>
       <a href="lunchbox/register.php" class="btn btn-primary px-3 d-none d-lg-block">Singin</a>
     </nav>
     <!-- Navbar End -->
@@ -275,7 +275,7 @@
               <p class="mb-4">
                 We pick your order and deliver to the particular area
               </p>
-              <a class="btn btn-light px-3" href="delivery.php">Book Now</a>
+              <a class="btn btn-light px-3" href="pickup.php">Share Food</a>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -295,7 +295,7 @@
               <p class="mb-4">
                 We help you to donate your food to needy people
               </p>
-              <a class="btn btn-light px-3" href="delivery.php">Book Now</a>
+              <a class="btn btn-light px-3" href="donate.php">Donate Food</a>
             </div>
           </div>
         </div>

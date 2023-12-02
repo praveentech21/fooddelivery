@@ -199,25 +199,9 @@
             style="min-height: 210px"
           >
           <div class="position-relative rounded overflow-hidden h-100">
-            <iframe
-              class="position-relative w-100 h-40"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-              frameborder="0"
-              style="min-height: 210px; border: 0"
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0"
-            ></iframe>
+          <div id="pickup" style="height:400px; width: 800px;" class="my-3"></div>
             <p>Pick Up Location</p>
-            <iframe
-              class="position-relative w-100 h-40"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-              frameborder="0"
-              style="min-height: 210px; border: 0"
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0"
-            ></iframe>
+            <div id="drop" style="height:400px; width: 800px;" class="my-3"></div>
             <p>Drop Location</p>
           </div>
       </div>
@@ -227,3 +211,68 @@
     <!-- Contact End -->
 
     <?php include "fotter.php" ?>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAea24UwU5sUreEizrJiCfzcUfsls9NZ_8&callback=initMap"
+                        type="text/javascript"></script>
+
+                        <script>
+                    let pickup, drop;
+                    function initMap() {
+                      pickup = new google.maps.Map(document.getElementById("pickup"), {
+                            center: { lat: 16.5449, lng: 81.5212 },
+                            zoom: 8,
+                            scrollwheel: true,
+                        });
+
+                        drop = new google.maps.Map(document.getElementById("drop"), {
+                            center: { lat: 22.397, lng: 81.5212 },
+                            zoom: 8,
+                            scrollwheel: true,
+                        });
+
+                        const uluru = { lat: -34.397, lng: 150.644 };
+                        let marker = new google.maps.Marker({
+                            position: uluru,
+                            map: pickup,
+                            draggable: true
+                        });
+
+                        const uluru1 = { lat: -34.397, lng: 150.644 };
+                        let marker1 = new google.maps.Marker({
+                            position: uluru,
+                            map: drop,
+                            draggable: true
+                        });
+
+                        google.maps.event.addListener(marker,'position_changed',
+                            function (){
+                                let lat = marker.position.lat()
+                                let lng = marker.position.lng()
+                                $('#lat').val(lat)
+                                $('#lng').val(lng)
+                            })
+
+                            google.maps.event.addListener(marker,'position_changed',
+                            function (){
+                                let lat = marker.position.lat()
+                                let lng = marker.position.lng()
+                                $('#lat').val(lat)
+                                $('#lng').val(lng)
+                            })
+ 
+
+                        google.maps.event.addListener(pickup,'click',
+                        function (event){
+                            pos = event.latLng
+                            marker.setPosition(pos)
+                        })
+
+                        google.maps.event.addListener(map,'click',
+                        function (event){
+                            pos = event.latLng
+                            marker.setPosition(pos)
+                        })
+
+
+                        
+                    }
+                </script>
