@@ -123,8 +123,8 @@
             >Contact Us</a>
         </div>
       </div>
-      <a href="login.php" class="btn btn-primary px-3 d-none d-lg-block">Login</a>
-      <a href="sigin.php" class="btn btn-primary px-3 d-none d-lg-block">Singin</a>
+      <a href="luncjbox/login.php" class="btn btn-primary px-3 d-none d-lg-block">Login</a>
+      <a href="lunchbox/register.php" class="btn btn-primary px-3 d-none d-lg-block">Singin</a>
     </nav>
     <!-- Navbar End -->
 
