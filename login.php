@@ -3,13 +3,12 @@ include "connect.php";
 session_start();
 
 if (isset($_POST["login"])) {
-  $check = "SELECT * FROM users WHERE mobile = '".$_POST["mobile"]."' AND password = '".$_POST["password"]."'";
+  $check = "SELECT * FROM users WHERE mobile = '{$_POST["mobile"]}' AND password = '{$_POST["password"]}'";
   if(mysqli_num_rows(mysqli_query($conn,$check)) > 0){
     $_SESSION["mobile"] = $_POST["mobile"];
-
-    header("Location: delivery.html");}
+    header("Location: delivery.php");}
   else {
-      echo "Your mobile number or password is incorrect";
+      echo "<script>alert('Your mobile number or password is incorrect')</script>";
   }
 }
 
@@ -116,7 +115,7 @@ if (isset($_POST["login"])) {
               <h4 class="mb-2">Welcome to Food Delivery! 👋</h4>
               <p class="mb-4">Please sign-in to your account and start enjoying</p>
 
-              <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-3" action="#" method="POST">
                 <div class="mb-3">
                   <label for="mobile" class="form-label">Enter Mobile Number</label>
                   <input

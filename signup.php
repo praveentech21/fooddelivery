@@ -135,7 +135,7 @@ if (isset($_POST["signup"])) {
               <h4 class="mb-2">Experience starts here</h4>
               <p class="mb-4">Make your delivery easy and fun!</p>
 
-              <form id="formAuthentication" class="mb-3" action="register.php" method="POST">
+              <form id="formAuthentication" class="mb-3" action="#" method="POST">
 
                 <div class="mb-3">
                   <label for="name" class="form-label">name</label>
@@ -159,7 +159,7 @@ if (isset($_POST["signup"])) {
                   </div>
                 </div>
                 <div class="mb-3 form-password-toggle">
-                  <label class="form-label" for="cpassword">Password</label>
+                  <label class="form-label" for="cpassword">Confirm Password</label>
                   <div class="input-group input-group-merge">
                     <input
                       type="password"

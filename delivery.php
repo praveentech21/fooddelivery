@@ -1,8 +1,7 @@
 <?php
 
-if(empty($_SESSION['mobile'])){
-  header("Location: login.php");
-  exit();}
+if(empty($_SESSION["mobile"])){
+  header("Location: login.php");}
 
 ?>
 
