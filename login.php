@@ -1,17 +1,25 @@
+<?php
+include "connect.php";
+session_start();
+
+if (isset($_POST["login"])) {
+  $check = "SELECT * FROM users WHERE mobile = '".$_POST["mobile"]."' AND password = '".$_POST["password"]."'";
+  if(mysqli_num_rows(mysqli_query($conn,$check)) > 0){
+    $_SESSION["mobile"] = $_POST["mobile"];
+
+    header("Location: delivery.html");}
+  else {
+      echo "Your mobile number or password is incorrect";
+  }
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
 
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
 <html
   lang="en"
   class="light-style customizer-hide"
@@ -110,13 +118,13 @@
 
               <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
                 <div class="mb-3">
-                  <label for="mobile" class="form-label">Enter Mobile no</label>
+                  <label for="mobile" class="form-label">Enter Mobile Number</label>
                   <input
                     type="text"
                     class="form-control"
                     id="email"
-                    name="email-username"
-                    placeholder="Enter your mobile no"
+                    name="mobile"
+                    placeholder="Enter your mobile number"
                     autofocus
                   />
                 </div>
@@ -124,7 +132,7 @@
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Password</label>
                     <a href="auth-forgot-password-basic.html">
-                      <small>Forgot Password?</small>
+                      <!-- <small>Forgot Password?</small> -->
                     </a>
                   </div>
                   <div class="input-group input-group-merge">
@@ -136,17 +144,17 @@
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                       aria-describedby="password"
                     />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                    <!-- <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span> -->
                   </div>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="remember-me" />
                     <label class="form-check-label" for="remember-me"> Remember Me </label>
                   </div>
-                </div>
+                </div> -->
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit" name="login" >Sign in</button>
                 </div>
               </form>
 

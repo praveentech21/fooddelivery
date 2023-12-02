@@ -1,17 +1,32 @@
+<?php
+include "connect.php";
+session_start();
+
+if (isset($_POST["signup"])) {
+  // $username = $_POST["mobile"];
+  $name = $_POST["name"];
+  $mobile = $_POST["mobile"];
+  $password = $_POST["password"];
+  $cpassword = $_POST["cpassword"];
+  if ($password != $cpassword) {
+    echo "<script>alert('Password does not match')</script>";
+    header("Location: delivery.php")
+  }
+  $sql = "INSERT INTO users (`name`, `mobile` , `password`) VALUES ('$name','$mobile', '$password')";
+
+  if ($conn->query($sql) === TRUE) {
+    header("Location: delivery.html");
+      
+  } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
+
+
+?>
+
 <!DOCTYPE html>
 
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
 <html
   lang="en"
   class="light-style customizer-hide"
@@ -121,20 +136,10 @@
               <p class="mb-4">Make your delivery easy and fun!</p>
 
               <form id="formAuthentication" class="mb-3" action="register.php" method="POST">
-                <div class="mb-3">
-                  <label for="username" class="form-label">Username</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="username"
-                    name="username"
-                    placeholder="Enter your username"
-                    autofocus
-                  />
-                </div>
+
                 <div class="mb-3">
                   <label for="name" class="form-label">name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter your email" />
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" />
                 </div>
                 <div class="mb-3">
                   <label for="mobile" class="form-label">Mobile no</label>
@@ -153,7 +158,20 @@
                     />
                   </div>
                 </div>
-                <button class="btn btn-primary d-grid w-100">Sign up</button>
+                <div class="mb-3 form-password-toggle">
+                  <label class="form-label" for="cpassword">Password</label>
+                  <div class="input-group input-group-merge">
+                    <input
+                      type="password"
+                      id="cpassword"
+                      class="form-control"
+                      name="cpassword"
+                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                      aria-describedby="Confirm password"
+                    />
+                  </div>
+                </div>
+                <button class="btn btn-primary d-grid w-100" name="signup" type="submit">Sign up</button>
               </form>
 
               <p class="text-center">

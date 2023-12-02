@@ -1,3 +1,11 @@
+<?php
+
+if(empty($_SESSION['mobile'])){
+  header("Location: login.php");
+  exit();}
+
+?>
+
 <html>
   <body>
     <style>
