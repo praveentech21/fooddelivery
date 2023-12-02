@@ -6,7 +6,7 @@ if (isset($_POST["login"])) {
   $check = "SELECT * FROM users WHERE mobile = '{$_POST["mobile"]}' AND password = '{$_POST["password"]}'";
   if(mysqli_num_rows(mysqli_query($conn,$check)) > 0){
     $_SESSION["mobile"] = $_POST["mobile"];
-    header("Location: delivery.php");
+    header("Location: pickup.php");
   }
 
   else {
