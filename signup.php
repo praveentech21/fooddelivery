@@ -58,19 +58,19 @@ if (isset($_POST["signup"])) {
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="boxicons.css" />
+    <link rel="stylesheet" href="bhavani/css/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="bhavani/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="bhavani/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="Bhavani/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="perfect-scrollbar.css" />
+    <link rel="stylesheet" href="bhavani/css/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
     <!-- Page -->
-    <link rel="stylesheet" href="page-auth.css" />
+    <link rel="stylesheet" href="bhavani/css/page-auth.css" />
     <!-- Helpers -->
     <script src="helpers.js"></script>
 
@@ -120,7 +120,7 @@ if (isset($_POST["signup"])) {
                               <a href="index.html" class="app-brand-link gap-2">
                                 <span class="app-brand-logo demo">
                                   <div class="logo-container">
-                                    <img src="logo.png" alt="Logo">
+                                    <img src="bhavani/img/logo.png" alt="Logo">
                                   </div>
                                 </span>
                                 <span class="app-brand-text demo text-body fw-bolder" style="font-size: 24px;">Instant Delivery</span>
@@ -176,7 +176,7 @@ if (isset($_POST["signup"])) {
 
               <p class="text-center">
                 <span>Already have an account?</span>
-                <a href="auth-login-basic.html">
+                <a href="login.php">
                   <span>Sign in instead</span>
                 </a>
               </p>
